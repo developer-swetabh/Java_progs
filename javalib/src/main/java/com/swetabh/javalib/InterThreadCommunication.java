@@ -83,4 +83,11 @@ public class InterThreadCommunication {
 
         }
     }
+
+    /* Here sequence of output will be
+        Main thread calling wait method
+        Child thread starts calculation
+        Child thread finished calculation and calling notify
+        MainThread got notification, printing Total = 5050
+    */
 }
