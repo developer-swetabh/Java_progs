@@ -13,14 +13,14 @@ public class DataQueue {
      * If multiple producer thread tries to produce at a time.
      * Only one thread should get the chance.
      */
-    private Object IS_NOT_FULL = new Object();
+    private final Object IS_NOT_FULL = new Object();
 
     /**
      * This lock will be used by consumer threads.
      * If multiple consumer thread tries to consume at a time.
      * Only one thread should get the chance.
      */
-    private Object IS_NOT_EMPTY = new Object();
+    private final Object IS_NOT_EMPTY = new Object();
 
     public DataQueue(int maxQueueCapacity) {
         MAX_QUEUE_CAPACITY = maxQueueCapacity;
