@@ -15,7 +15,8 @@ import java.util.concurrent.locks.ReentrantLock;
  * The Synchronization keyword compulsory we have to use, either at method level or within a method
  * and it is not possible to use across multiple methods.
  * <p>
- * To overcome these problems, SUN introduced java.uti.concurrent.locks package in 1.5version.
+ * To overcome these problems, SUN introduced {@link java.util.concurrent.locks} package
+ * in 1.5version.
  * It also provides several enhancements to the programmer to provide more control on concurrency.
  * <p>
  * {@link java.util.concurrent.locks.Lock} interface:
@@ -25,12 +26,12 @@ import java.util.concurrent.locks.ReentrantLock;
  * Lock implementation provided more extensive operation than traditional implicit locks.
  * <p>
  * Important methods of {@link java.util.concurrent.locks.Lock} interface
- * void {@code lock()}: we can use this method to acquire a lock. If the lock is already available then
- * immediately current thread will get that lock. If the lock is not already available then
+ * {@code void lock()}: we can use this method to acquire a lock. If the lock is already available
+ * then immediately current thread will get that lock. If the lock is not already available then
  * it will wait until getting the lock. It is exactly same behavior of traditional synchronized
  * keyword
  * <p>
- * boolean {@code tryLock()}: To acquire the lock without waiting.
+ * {@code boolean tryLock()}: To acquire the lock without waiting.
  * If the lock is available then thread acquire the lock and returns true. If the lock is not available
  * then this method returns false and again continue its execution without waiting. In this case
  * thread never be entered into waiting state.
@@ -40,7 +41,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * // perform alternative operation
  * }
  * <p>
- * boolean {@code tryLock(long time, TimeUnit unit)} : If lock is available then thread will get
+ * {@code boolean tryLock(long time, TimeUnit unit)} : If lock is available then thread will get
  * the lock and continue its execution. If the lock is not available, then the thread will wait
  * until specified amount of time, still if the lock is not available then thread can continue its
  * execution.
@@ -49,11 +50,11 @@ import java.util.concurrent.locks.ReentrantLock;
  * // perform opearation
  * }
  * <p>
- * void {@code lockInterruptibly} : Acquires the lock if it is available and returns immediately.
+ * {@code void lockInterruptibly()} : Acquires the lock if it is available and returns immediately.
  * If the lock is not available then it will wait, while waiting if the thread is interrupted then
  * thread wont get the lock.
  * <p>
- * void {@code unlock()} : To releases the lock
+ * {@code void unlock()} : To releases the lock
  * To call this method compulsory, current thread should be owner of the lock otherwise we will get
  * runtime exception saying {@link IllegalMonitorStateException}
  * <p>
